@@ -1,4 +1,4 @@
-package hojaEjercicios1;
+package metodos;
 
 public class Media {
 
