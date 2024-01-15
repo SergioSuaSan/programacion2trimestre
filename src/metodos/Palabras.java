@@ -23,17 +23,39 @@ public class Palabras {
 		return trozo;
 	}
 	
+//	public static int cuentaVocales(String frase) {
+//		frase.toLowerCase();
+//		int vocal = 0;
+//		String vocales ="aeiouáéíóúäëïöüàèìòùâêûîô";
+//		for (int i = 0; i < frase.length(); i++) {
+//			if (vocales.indexOf ( frase.charAt(i) ) != -1 ) {
+//				vocal ++;			
+//			}
+//		}
+//		return vocal;
+//	}
+	
+	
+	//Método recursivo
 	public static int cuentaVocales(String frase) {
 		frase.toLowerCase();
-		int vocal = 0;
 		String vocales ="aeiouáéíóúäëïöüàèìòùâêûîô";
-		for (int i = 0; i < frase.length(); i++) {
-			if (vocales.indexOf ( frase.charAt(i) ) != -1 ) {
-				vocal ++;			
-			}
+		if (frase. length() == 0) {	// facil
+			return 0;
+		} else {
+			char letra = frase.charAt(0);				// sacar la primera letra
+			String resto = frase.substring(1);		// eliminar la letra de la frasel
+			if (vocales.indexOf (letra ) != -1) {
+				return 1 + cuentaVocales(resto);
+			} else {
+				return cuentaVocales(resto);
+			}	
 		}
-		return vocal;
+			
+			
+			
+		 
+		
 	}
-
 	
 }
