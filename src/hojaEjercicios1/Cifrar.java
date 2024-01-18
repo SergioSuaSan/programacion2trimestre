@@ -15,27 +15,65 @@ ningún cambio.
 		
 		
 		System.out.println(cifrar ("Hola, cómo estás"));
-		System.out.println(descifrar ("Jqnc.\"eõoq\"guvãu"));
+		System.out.println(descifrar ("Jqnc, eõoq guvãu"));
 
 	}
 	
 	
+//	public static String cifrar(String frase) {
+//		String resultado = "";
+//		for (int i = 0; i < frase.length(); i++) {
+//			char cifrado =(char) (frase.charAt(i) +2);
+//			resultado += cifrado ;
+//		}
+//		return resultado;
+//	}
+//	public static String descifrar(String frase) {
+//		String resultado = "";
+//		for (int i = 0; i < frase.length(); i++) {
+//			char cifrado =(char) (frase.charAt(i) -2);
+//			resultado += cifrado ;
+//		}
+//		return resultado;
+//	}
+	
+
 	public static String cifrar(String frase) {
-		String resultado = "";
-		for (int i = 0; i < frase.length(); i++) {
-			char cifrado =(char) (frase.charAt(i) +2);
-			resultado += cifrado ;
+		StringBuilder sb = new StringBuilder(frase);
+		char letra;
+		for (int i = 0; i < sb.length(); i++) {
+			letra = sb.charAt(i);
+			if (Character.isAlphabetic(letra)) {
+				if (letra== 'y') { letra ='a';} 
+				else if (letra== 'z') { letra ='b';} 
+				else {letra  =(char) (letra + 2);
+				sb.setCharAt(i, letra);
+			}
 		}
-		return resultado;
-	}
-	public static String descifrar(String frase) {
-		String resultado = "";
-		for (int i = 0; i < frase.length(); i++) {
-			char cifrado =(char) (frase.charAt(i) -2);
-			resultado += cifrado ;
 		}
-		return resultado;
+		return sb.toString();
 	}
+		
+		public static String descifrar(String frase) {
+			StringBuilder sb = new StringBuilder(frase);
+			char letra;
+			for (int i = 0; i < sb.length(); i++) {
+				letra = sb.charAt(i);
+				if (Character.isAlphabetic(letra)) {
+					if (letra== 'a') { letra ='y';} 
+					else if (letra== 'b') { letra ='z';} 
+					else {letra  =(char) (letra - 2);
+					sb.setCharAt(i, letra);
+					}
+				}
+			}
+			return sb.toString();
+		}
+		
+}
+	
+	
+	
+	
 	
 
-}
