@@ -9,15 +9,15 @@ valor dado, siendo:
 		 */
 
 		
-		System.out.println(Fibonacci(45));
+		System.out.println(fibonacci(7));
 		
 	}
 	
-	public static int Fibonacci( int num) {
+	public static int fibonacci( int num) {
 		if (num == 1) return 0;
 		if (num == 2) return 1;
 		else  {
-			return Fibonacci(num-1) + Fibonacci(num-2);
+			return fibonacci(num-1) + fibonacci(num-2);
 		}
 		
 	}
