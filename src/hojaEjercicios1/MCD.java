@@ -10,7 +10,7 @@ dice que si tenemos dos números A y B, restamos el menor del mayor hasta que
 A y B sean iguales, es ese momento tenemos el valor de mcd.
 		 */
 
-		System.out.println( mcd(60,24));
+		System.out.println( mcd(60,26));
 	}
 
 	public static int mcd (int num1, int num2) {
